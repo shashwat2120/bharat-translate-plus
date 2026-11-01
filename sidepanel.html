@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bharat Translate+</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header class="top">
+    <img src="icons/icon48.png" alt="" width="32" height="32">
+    <div>
+      <h1>Bharat Translate+</h1>
+      <p class="tagline">Translate &amp; simplify any page. Runs on your computer.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="settings-h">
+      <h2 id="settings-h" class="visually-hidden">Settings</h2>
+
+      <label for="lang" class="field-label">Translate into</label>
+      <select id="lang">
+        <option value="hi">हिन्दी — Hindi</option>
+        <option value="mr">मराठी — Marathi</option>
+        <option value="ta">தமிழ் — Tamil</option>
+        <option value="te">తెలుగు — Telugu</option>
+        <option value="kn">ಕನ್ನಡ — Kannada</option>
+        <option value="bn">বাংলা — Bengali</option>
+        <option value="en">English (simplify only)</option>
+      </select>
+
+      <div class="toggle-row">
+        <input type="checkbox" id="simplify" checked>
+        <label for="simplify">
+          <strong>Simplify too</strong>
+          <span class="hint">Rewrite long text in easy words before translating</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="page-h">
+      <h2 id="page-h">This page</h2>
+      <div class="btn-row">
+        <button id="translatePage" class="primary">Translate this page</button>
+        <button id="stop" class="secondary" hidden>Stop</button>
+        <button id="restore" class="secondary">Show original</button>
+      </div>
+      <div id="progressWrap" class="progress-wrap" hidden>
+        <div class="progress"><div id="progressBar" class="bar"></div></div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="text-h">
+      <h2 id="text-h">Any text</h2>
+      <label for="input" class="field-label">Paste text, or right-click selected text on any page</label>
+      <textarea id="input" rows="5" placeholder="Paste text here…"></textarea>
+      <div class="btn-row">
+        <button id="translateText" class="primary">Translate text</button>
+      </div>
+
+      <div id="outputWrap" hidden>
+        <p class="field-label" id="output-label">Result</p>
+        <div id="output" class="output" aria-labelledby="output-label" aria-live="polite"></div>
+        <div class="btn-row">
+          <button id="speak" class="secondary">🔊 Read aloud</button>
+          <button id="copy" class="secondary">Copy</button>
+        </div>
+      </div>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <details class="card about">
+      <summary>AI status on this computer</summary>
+      <ul id="support"></ul>
+      <p class="hint">Needs Chrome 138+ on desktop. AI models download once (the first run may take a few minutes). Your text never leaves your computer.</p>
+    </details>
+  </main>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
