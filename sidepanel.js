@@ -96,6 +96,26 @@ async function getSimplifier() {
   };
   const availability = await LanguageModel.availability(opts);
   if (availability === "unavailable") return null;
+  if (availability !== "available") {
+    // Download in the background so translating isn't blocked; simplify from the next run.
+    state.simplifierLoading = state.simplifierLoading || LanguageModel.create({
+      ...opts,
+      initialPrompts: [{ role: "system", content: SIMPLIFY_SYSTEM_PROMPT }],
+      monitor: (m) => m.addEventListener("downloadprogress", (e) => {
+        if (!state.running) setStatus(`Downloading the AI model for simplifying… ${Math.round(e.loaded * 100)}%`);
+      }),
+    }).then((session) => {
+      state.simplifier = session;
+      state.simplifierLoading = null;
+      if (!state.running) setStatus("Simplifying is ready. Press Translate again to use it.");
+      return session;
+    }).catch((err) => {
+      console.warn("Simplifier download failed", err);
+      state.simplifierLoading = null;
+      return null;
+    });
+    return null;
+  }
   state.simplifier = await LanguageModel.create({
     ...opts,
     initialPrompts: [{ role: "system", content: SIMPLIFY_SYSTEM_PROMPT }],
@@ -159,7 +179,10 @@ async function ensureTranslators(source, target, useSimplify) {
 }
 
 function simplifyNote(wantSimplify, useSimplify) {
-  return wantSimplify && !useSimplify ? " (Simplifying isn't available on this computer, so it was translated only.)" : "";
+  if (!wantSimplify || useSimplify) return "";
+  return state.simplifierLoading
+    ? " (The AI model for simplifying is still downloading, so this was translated only. Try again once it's ready.)"
+    : " (Simplifying isn't available on this computer, so it was translated only.)";
 }
 
 // One piece of text through the whole pipeline.
