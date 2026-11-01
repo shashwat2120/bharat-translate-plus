@@ -5,6 +5,13 @@ Free, private, and runs on your own computer using Chrome's built-in AI. No serv
 
 **Languages:** Hindi, Marathi, Tamil, Telugu, Kannada, Bengali (+ English "simplify only")
 
+## Screenshots
+<!-- Add your images to docs/screenshots/, then remove the comment markers around the lines below. -->
+<!--
+![Side panel with language picker](docs/screenshots/panel.png)
+![English news page translated to Hindi](docs/screenshots/translated-page.png)
+-->
+
 ## What it does
 - **Translate this page:** replaces the page text with your language. Visible text goes first.
 - **Simplify too:** long paragraphs are rewritten in easy words before translating.
