@@ -51,6 +51,7 @@ or `chrome://flags/#optimization-guide-on-device-model` and set it to **Enabled*
 | `background.js` | Opens the side panel, adds the right-click menu |
 | `sidepanel.html` / `.css` / `.js` | The panel UI and all the AI logic |
 | `icons/` | Toolbar and store icons |
+| `scripts/pack.ps1` | Builds the release zip in `dist/` (run: `powershell -ExecutionPolicy Bypass -File scripts/pack.ps1`) |
 | `PRIVACY.md` | Privacy policy, needed for the Chrome Web Store |
 | `STORE_LISTING.md` | Ready-to-paste text for the store listing |
 
