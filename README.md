@@ -65,3 +65,8 @@ or `chrome://flags/#optimization-guide-on-device-model` and set it to **Enabled*
 - Reading level choice (Very simple / Simple / Normal)
 - "Explain this word" on double-click
 - Auto-translate chosen sites
+
+## Author
+Made by **Shashwat Mishra** — mshashwat2127@gmail.com
+
+Licensed under the [MIT License](LICENSE).

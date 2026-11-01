@@ -3,6 +3,7 @@
   "name": "Bharat Translate+",
   "short_name": "Bharat T+",
   "version": "0.1.0",
+  "author": "Shashwat Mishra",
   "description": "Translate and simplify any web page into Hindi, Marathi, Tamil and more. Free, private, on-device AI.",
   "minimum_chrome_version": "138",
   "permissions": ["sidePanel", "scripting", "storage", "contextMenus"],

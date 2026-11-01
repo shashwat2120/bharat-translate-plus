@@ -28,4 +28,4 @@ Only your settings (chosen language and whether "Simplify" is on), saved in Chro
 The AI models are provided and updated by Google Chrome. See Google's Chrome privacy notice for how Chrome manages them.
 
 **Contact**
-Questions: [your-contact-email@example.com]
+Questions: mshashwat2127@gmail.com
