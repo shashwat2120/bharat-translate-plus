@@ -67,6 +67,6 @@ or `chrome://flags/#optimization-guide-on-device-model` and set it to **Enabled*
 - Auto-translate chosen sites
 
 ## Author
-Made by **Shashwat Mishra** — mshashwat2127@gmail.com
+Made by **[Shashwat Mishra](https://github.com/shashwat2120)** — mshashwat2127@gmail.com
 
 Licensed under the [MIT License](LICENSE).
